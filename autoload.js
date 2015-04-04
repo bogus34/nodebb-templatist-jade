@@ -1,7 +1,8 @@
 /* global jQuery */
 $(window).one('action:init-templatist', function() {
-    require(['nodebb-templatist', 'nodebb-templatist-jade/loaders/clientside'],
-        function(Templatist, initJadeLoader) {
+    window.require(['nodebb-templatist'],
+        function(Templatist) {
+            var initJadeLoader = require('./lib/loaders/clientside');
             initJadeLoader(Templatist);
         });
 });
